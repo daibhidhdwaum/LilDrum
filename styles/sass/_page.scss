@@ -1,0 +1,106 @@
+body {
+  background-color: #222;
+}
+
+h1,
+p,
+h2{
+  color: #cc5500;
+}
+
+h2,
+p
+{
+    font-family: 'Rubik', sans-serif;
+    text-transform: uppercase;
+
+}
+
+ul,
+li{
+    display: flex;
+}
+
+section,
+li{
+    border: 3px solid #cc5500;
+}
+
+h1 {
+  letter-spacing: -0.2rem;
+  font-family: "Literata", serif;
+  margin-left: 1rem;
+  .upper {
+    font-size: 10rem;
+    vertical-align: -1rem;
+  }
+  .l{
+      letter-spacing: -3rem;
+  }
+    .i {
+    letter-spacing: -1.5rem;
+  }
+  .lower {
+    font-size: 6rem;;
+  }
+.drum {
+    font-family: "Jacques Francois Shadow", cursive;
+    letter-spacing: -1rem;
+  }
+}
+
+h2{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+h2 span {
+  display: inline-block;
+  position: relative;  
+}
+
+h2 span:before,
+h2 span:after {
+  content: "";
+  position: absolute;
+  height: 1rem;
+//   border-bottom: 3px solid #cc5500;
+  border-top: 3px solid #cc5500;
+  top: 2rem;
+  width: 200%;
+}
+
+h2 span::before{
+    right: 6rem;
+}
+
+h2 span::after{
+    left: 6rem;
+}
+
+section {
+  margin: 2%;
+  border-radius: 12px;
+  height: 70vh;
+}
+
+ul {
+  flex-wrap: wrap;
+  height: 80%;
+  li {
+      align-items: center;
+      justify-content: center;
+    margin: 1rem;
+    width: calc(50% - 2rem);
+    text-align: center;
+    p {
+      font-size: 2rem;
+    }
+  }
+}
+
+// font-family: 'Jacques Francois Shadow', cursive;
+
+// font-family: 'Literata', serif;

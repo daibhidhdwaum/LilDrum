@@ -234,3 +234,133 @@ html {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+html {
+  font-size: 63.5%;
+}
+
+ul,
+li,
+h1,
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: #222;
+}
+
+h1,
+p,
+h2 {
+  color: #cc5500;
+}
+
+h2,
+p {
+  font-family: 'Rubik', sans-serif;
+  text-transform: uppercase;
+}
+
+ul,
+li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section,
+li {
+  border: 3px solid #cc5500;
+}
+
+h1 {
+  letter-spacing: -0.2rem;
+  font-family: "Literata", serif;
+  margin-left: 1rem;
+}
+
+h1 .upper {
+  font-size: 10rem;
+  vertical-align: -1rem;
+}
+
+h1 .l {
+  letter-spacing: -3rem;
+}
+
+h1 .i {
+  letter-spacing: -1.5rem;
+}
+
+h1 .lower {
+  font-size: 6rem;
+}
+
+h1 .drum {
+  font-family: "Jacques Francois Shadow", cursive;
+  letter-spacing: -1rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+h2 span {
+  display: inline-block;
+  position: relative;
+}
+
+h2 span:before,
+h2 span:after {
+  content: "";
+  position: absolute;
+  height: 1rem;
+  border-top: 3px solid #cc5500;
+  top: 2rem;
+  width: 200%;
+}
+
+h2 span::before {
+  right: 6rem;
+}
+
+h2 span::after {
+  left: 6rem;
+}
+
+section {
+  margin: 2%;
+  border-radius: 12px;
+  height: 70vh;
+}
+
+ul {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 80%;
+}
+
+ul li {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1rem;
+  width: calc(50% - 2rem);
+  text-align: center;
+}
+
+ul li p {
+  font-size: 2rem;
+}
