@@ -21,11 +21,18 @@ lilDrum.instruments = [
     // play sourc
 
 // grab sound requested
+lilDrum.onClickSound = () => {
+
+    $('.sound').on('click', function(){
+        const hit = $(this).attr('id');
+    })
+}
     // callback to trigger when sound is played
 
     lilDrum.init = () => {
+        lilDrum.onClickSound();
     }
 
 $(() => {
-    lilDrim.init();
+    lilDrum.init();
 })
