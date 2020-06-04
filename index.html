@@ -13,34 +13,48 @@
 </head>
 
 <body>
-    <h1><span class="l upper">L</span>
-        <span class="lower">
-            <span class="i">i</span>
-            <span class="apostrophe">'l</span>
-        </span>
-        <span class="drum">
-            <span class="upper">D</span>
-            <span class="lower">rum</span>
-        </span>
-    </h1>
+    <header>
+        <div class="wrapper">
+            <h1>
+                <span class="l upper">L</span>
+                <span class="lower">
+                    <span class="i">i</span>
+                    <span class="apostrophe">'l</span>
+                </span>
+                <span class="drum">
+                    <span class="upper">D</span>
+                    <span class="lower">rum</span>
+                </span>
+                <span class="lines"></span>
+            </h1>
+        </div>
+    </header>
 
-    <section>
-        <h2><span>Kit</span></h2>
-        <ul>
-            <li class="sound toggle kick" id="0" key-code="65">
-                <p>Bass</p>
-            </li>
-            <li class="sound toggle snare" id="1" keycode="83">
-                <p>Snare</p>
-            </li>
-            <li class="sound toggle closed" id="2" keycode="63">
-                <p>Closed</p>
-            </li>
-            <li class="sound toggle open" id="3" keycode="70">
-                <p>Open</p>
-            </li>
-        </ul>
-    </section>
+    <main>
+        <div class="wrapper">
+            <section>
+                <h2><span>Kit</span></h2>
+                <ul>
+                    <li class="sound toggle kick" id="0" key-code="65">
+                        <kbd class="visually-hidden">A</kbd>
+                        <p>Bass</p>
+                    </li>
+                    <li class="sound toggle snare" id="1" keycode="83">
+                        <kbd class="visually-hidden">S</kbd>
+                        <p>Snare</p>
+                    </li>
+                    <li class="sound toggle closed" id="2" keycode="63">
+                        <kbd class="visually-hidden">D</kbd>
+                        <p>Closed</p>
+                    </li>
+                    <li class="sound toggle open" id="3" keycode="70">
+                        <kbd class="visually-hidden">F</kbd>
+                        <p>Open</p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
 
     <script src='https://code.jquery.com/jquery-3.4.0.min.js'
         integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>

@@ -257,12 +257,14 @@ body {
 
 h1,
 p,
-h2 {
+h2,
+kbd {
   color: #cc5500;
 }
 
 h2,
-p {
+p,
+kbd {
   font-family: "Rubik", sans-serif;
   text-transform: uppercase;
 }
@@ -307,6 +309,13 @@ h1 .drum {
   letter-spacing: -1rem;
 }
 
+section {
+  margin: 2%;
+  border-radius: 12px;
+  height: 70vh;
+  padding: 2rem;
+}
+
 h2 {
   font-size: 3.5rem;
   text-transform: uppercase;
@@ -337,12 +346,6 @@ h2 span::after {
   left: 6rem;
 }
 
-section {
-  margin: 2%;
-  border-radius: 12px;
-  height: 70vh;
-}
-
 ul {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -350,6 +353,10 @@ ul {
 }
 
 ul li {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -361,8 +368,24 @@ ul li {
   text-align: center;
 }
 
+ul li kbd {
+  font-size: 5rem;
+}
+
 ul li p {
   font-size: 2rem;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  /* added line */
 }
 
 @media (min-width: 769px) {
@@ -379,6 +402,9 @@ ul li p {
   h1 .lower {
     font-size: calc(6rem * 2);
   }
+  section {
+    height: 50vh;
+  }
   ul {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -387,5 +413,13 @@ ul li p {
   ul li {
     width: calc(25% - 2rem);
     height: 17.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
   }
 }

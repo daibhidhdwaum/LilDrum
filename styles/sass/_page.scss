@@ -4,12 +4,14 @@ body {
 
 h1,
 p,
-h2 {
+h2,
+kbd {
   color: #cc5500;
 }
 
 h2,
-p {
+p,
+kbd {
   font-family: "Rubik", sans-serif;
   text-transform: uppercase;
 }
@@ -47,6 +49,27 @@ h1 {
   }
 }
 
+// .lines {
+//   display: inline-block;
+//   position: relative;
+// }
+//  .lines:after {
+//   content: "";
+//   position: absolute;
+//   height: 1rem;
+//     border-bottom: 3px solid #cc5500;
+//   border-top: 3px solid #cc5500;
+//   top: 2rem;
+//   width: 200%;
+// }
+
+section {
+  margin: 2%;
+  border-radius: 12px;
+  height: 70vh;
+  padding: 2rem;
+}
+
 h2 {
   font-size: 3.5rem;
   text-transform: uppercase;
@@ -78,23 +101,32 @@ h2 span::after {
   left: 6rem;
 }
 
-section {
-  margin: 2%;
-  border-radius: 12px;
-  height: 70vh;
-}
 
 ul {
   flex-wrap: wrap;
   height: 80%;
   li {
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 1rem;
     width: calc(50% - 2rem);
     text-align: center;
+    kbd{
+      font-size: 5rem;
+    }
     p {
       font-size: 2rem;
     }
   }
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
 }
