@@ -17,7 +17,7 @@ lilDrum.instruments = [
 ]
 // initialise audio connction
 lilDrum.sound = new Audio();
-sound = lilDrum.sound;
+const sound = lilDrum.sound;
 // created functionto play sound
 lilDrum.playSound = (hit) =>{
     // assign source of sound to be played
