@@ -25,25 +25,31 @@ lilDrum.instruments = [
 ]
 // initialise audio connction
 lilDrum.sound = new Audio();
-const sound = lilDrum.sound;
-// created functionto play sound
+let hit;
+// create function to play sound
 lilDrum.playSound = (hit) =>{
     // assign source of sound to be played
-    sound.src = lilDrum.instruments[hit].soundPath;
+    lilDrum.sound.src = lilDrum.instruments[hit].soundPath;
     // play source
-    sound.currentTime = 0;
-    sound.play();
+    lilDrum.sound.currentTime = 0;
+    lilDrum.sound.play();
+}
 
+lilDrum.setTimeout = () => {
+    setTimeout(()=>{
+        $(`#${hit}`).removeClass('played');
+    }, 600)
 }
 
 // grab sound requested
 lilDrum.onClickSound = () => {
-
     // callback to trigger when sound is played
     $('.sound').on('click', function(){
-        const hit = $(this).attr('id');
+        hit = $(this).attr('id');
         lilDrum.playSound(hit);
-    })
+        $(`#${hit}`).addClass('played');
+        lilDrum.setTimeout();
+})
 }
 
 // keyboard trigger function
@@ -51,9 +57,12 @@ lilDrum.keyTriggerSound = () => {
     // look at window to 
     $(window).keydown((e) => {
         // determine which key has been hit
-        const keyHit = $(`li[data-key=${e.keyCode}]`);
+        const keyHit = $(`li[dataKey=${e.keyCode}]`);
         hit = keyHit[0].attributes[1].value;
         lilDrum.playSound(hit);
+        $(`#${hit}`).addClass('played');
+        lilDrum.setTimeout();
+
     })
 }
 

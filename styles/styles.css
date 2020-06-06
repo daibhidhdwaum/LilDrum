@@ -278,7 +278,7 @@ li {
 
 section,
 li {
-  border: 3px solid #cc5500;
+  border: 5px solid #cc5500;
 }
 
 h1 {
@@ -377,16 +377,11 @@ ul li p {
   font-size: 2rem;
 }
 
-.visually-hidden:not(:focus):not(:active) {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px);
-  /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
-  /* added line */
+.played {
+  -webkit-transition: all .1s;
+  transition: all .1s;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 @media (min-width: 769px) {
