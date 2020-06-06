@@ -4,22 +4,22 @@ const lilDrum = {};
 lilDrum.instruments = [
     {
         hit: '0',
-        keyCode: '65',
+        keyCode: 65,
         soundPath: `./assets/audio/kick.wav`
     },
     {
         hit: '1',
-        keyCode: '83',
+        keyCode: 83,
         soundPath: `./assets/audio/snare.wav`
     },
     {
         hit: '2',
-        keyCode: '68',
+        keyCode: 68,
         soundPath: `./assets/audio/closedHat.wav`
     },
     {
         hit: '3',
-        keyCode: '70',
+        keyCode: 70,
         soundPath: `./assets/audio/openHat.wav`
     }
 ]
@@ -35,10 +35,11 @@ lilDrum.playSound = (hit) =>{
     lilDrum.sound.play();
 }
 
-lilDrum.setTimeout = () => {
+lilDrum.onHitResize = () => {
+    $(`#${hit}`).addClass('played');
     setTimeout(()=>{
         $(`#${hit}`).removeClass('played');
-    }, 600)
+    }, 400)
 }
 
 // grab sound requested
@@ -47,8 +48,7 @@ lilDrum.onClickSound = () => {
     $('.sound').on('click', function(){
         hit = $(this).attr('id');
         lilDrum.playSound(hit);
-        $(`#${hit}`).addClass('played');
-        lilDrum.setTimeout();
+        lilDrum.onHitResize();
 })
 }
 
@@ -57,19 +57,21 @@ lilDrum.keyTriggerSound = () => {
     // look at window to 
     $(window).keydown((e) => {
         // determine which key has been hit
-        const keyHit = $(`li[dataKey=${e.keyCode}]`);
-        hit = keyHit[0].attributes[1].value;
-        lilDrum.playSound(hit);
-        $(`#${hit}`).addClass('played');
-        lilDrum.setTimeout();
-
+        const key = e.keyCode;
+        for(let i = 0; i < lilDrum.instruments.length; i++){
+            if(key === lilDrum.instruments[i].keyCode){
+                hit = lilDrum.instruments[i].hit;
+                lilDrum.playSound(hit);
+                lilDrum.onHitResize();
+                }
+        }
     })
 }
 
-    lilDrum.init = () => {
-        lilDrum.onClickSound();
-        lilDrum.keyTriggerSound();
-    }
+lilDrum.init = () => {
+    lilDrum.onClickSound();
+    lilDrum.keyTriggerSound();
+}
 
 $(() => {
     lilDrum.init();
