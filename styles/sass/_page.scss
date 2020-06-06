@@ -1,4 +1,5 @@
-body {
+body,
+button{
   background-color: #222;
 }
 
@@ -101,7 +102,6 @@ h2 span::after {
   left: 6rem;
 }
 
-
 ul {
   flex-wrap: wrap;
   height: 80%;
@@ -113,17 +113,25 @@ ul {
     margin: 1rem;
     width: calc(50% - 2rem);
     text-align: center;
-    kbd{
-      font-size: 5rem;
+    button {
+      width: 100%;
+      height: 100%;
+      border: none;
+      kbd {
+        font-size: 5rem;
+      }
+      p {
+        font-size: 2rem;
+      }
     }
-    p {
-      font-size: 2rem;
-    }
+  }
+  button:focus {
+    border: 2px dotted whitesmoke;
   }
 }
 
-.played{
-  transition: all .1s;
+.played {
+  transition: all 0.1s;
   transform: scale(1.1);
 }
 // .visuallyhidden:not(:focus):not(:active) {

@@ -4,22 +4,22 @@ const lilDrum = {};
 lilDrum.instruments = [
     {
         hit: '0',
-        keyCode: 65,
+        keyCode: 97,
         soundPath: `./assets/audio/kick.wav`
     },
     {
         hit: '1',
-        keyCode: 83,
+        keyCode: 115,
         soundPath: `./assets/audio/snare.wav`
     },
     {
         hit: '2',
-        keyCode: 68,
+        keyCode: 100,
         soundPath: `./assets/audio/closedHat.wav`
     },
     {
         hit: '3',
-        keyCode: 70,
+        keyCode: 102,
         soundPath: `./assets/audio/openHat.wav`
     }
 ]
@@ -55,7 +55,8 @@ lilDrum.onClickSound = () => {
 // keyboard trigger function
 lilDrum.keyTriggerSound = () => {
     // look at window to 
-    $(window).keydown((e) => {
+    $(window).keypress((e) => {
+        console.log(e)
         // determine which key has been hit
         const key = e.keyCode;
         for(let i = 0; i < lilDrum.instruments.length; i++){
