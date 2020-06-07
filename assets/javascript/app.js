@@ -24,15 +24,15 @@ lilDrum.instruments = [
     }
 ]
 // initialise audio connction
-lilDrum.sound = new Audio();
 let hit;
 // create function to play sound
 lilDrum.playSound = (hit) =>{
+    const sound = new Audio();
     // assign source of sound to be played
-    lilDrum.sound.src = lilDrum.instruments[hit].soundPath;
+    sound.src = lilDrum.instruments[hit].soundPath;
     // play source
-    lilDrum.sound.currentTime = 0;
-    lilDrum.sound.play();
+    sound.currentTime = 0;
+    sound.play();
 }
 
 lilDrum.onHitResize = () => {
@@ -56,7 +56,6 @@ lilDrum.onClickSound = () => {
 lilDrum.keyTriggerSound = () => {
     // look at window to 
     $(window).keypress((e) => {
-        console.log(e)
         // determine which key has been hit
         const key = e.keyCode;
         for(let i = 0; i < lilDrum.instruments.length; i++){
