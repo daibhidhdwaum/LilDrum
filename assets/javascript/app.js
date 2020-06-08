@@ -48,6 +48,13 @@ let hit;
 let instrumentSound;
 let selectedInputIndex;
 
+// function to set default sound
+lilDrum.defaultSound = () => {
+    if (instrumentSound === undefined) {
+        instrumentSound = 0;
+    }
+}
+
 // function to point to selected drum sound 
 lilDrum.selectDrumSound = () => {
 
@@ -71,10 +78,10 @@ lilDrum.selectDrumSound = () => {
                 break;
             }
 
-            const instSoundStr = $(this).find(':selected').attr('id');
+            const instSoundStr = $(this).find(":selected").attr("id");
             const strArr = [];
             strArr.push(instSoundStr)
-            const indexNum = strArr[0].split('')[1];
+            const indexNum = strArr[0].split("")[1];
             instrumentSound = parseInt(indexNum);
     })
 }
@@ -90,27 +97,22 @@ lilDrum.playSound = (hit, selectedSound) =>{
     sound.play();
 }
 
-lilDrum.onHitResize = () => {
-    $(`#${hit}`).addClass('played');
-    setTimeout(()=>{
-        $(`#${hit}`).removeClass('played');
-    }, 400)
+lilDrum.onHitResize = (hit) => {
+        $(`#${hit}`).addClass("played");
+        setTimeout(() => {
+            $(`#${hit}`).removeClass("played");
+    }, 410);
 }
 
 // grab sound requested
 lilDrum.onClickSound = () => {
     // callback to trigger when sound is played
-    $('.sound').on('click', function(){
-      
-        hit = $(this).attr('id');
+    $(".sound").on("click", function(){
+        const hit = $(this).attr("id");
 
-        if(instrumentSound === undefined){
-            instrumentSound = 0;
-        }
-        
+        lilDrum.defaultSound();
         lilDrum.playSound(hit, instrumentSound);
-        
-        lilDrum.onHitResize();
+        lilDrum.onHitResize(hit);
     })
 }
 
@@ -122,18 +124,19 @@ lilDrum.keyTriggerSound = () => {
         const key = e.key.toLowerCase();
         for(let i = 0; i < lilDrum.instruments.length; i++){
             if(key === lilDrum.instruments[i].keyCode){
-                hit = lilDrum.instruments[i].pad;
+                const hit = lilDrum.instruments[i].pad;
+                lilDrum.defaultSound();
                 lilDrum.playSound(hit, instrumentSound);
-                lilDrum.onHitResize();
+                lilDrum.onHitResize(hit);
                 }
         }
     })
 }
 
 lilDrum.init = () => {
-    lilDrum.selectDrumSound();
     lilDrum.onClickSound();
     lilDrum.keyTriggerSound();
+    lilDrum.selectDrumSound();
   
 }
 
