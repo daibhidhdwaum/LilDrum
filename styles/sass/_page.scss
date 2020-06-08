@@ -1,5 +1,5 @@
 body,
-button{
+button {
   background-color: #222;
 }
 
@@ -23,14 +23,24 @@ li {
 }
 
 section,
-li {
+ul li button {
   border: 5px solid #cc5500;
 }
 
+h2,
+button {
+  margin: 1rem 0;
+}
+
+ul li,
+h2 {
+  text-align: center;
+}
+
 h1 {
+  margin-left: 1rem;
   letter-spacing: -0.2rem;
   font-family: "Literata", serif;
-  margin-left: 1rem;
   .upper {
     font-size: 10rem;
     vertical-align: -1rem;
@@ -50,32 +60,22 @@ h1 {
   }
 }
 
-// .lines {
-//   display: inline-block;
-//   position: relative;
-// }
-//  .lines:after {
-//   content: "";
-//   position: absolute;
-//   height: 1rem;
-//     border-bottom: 3px solid #cc5500;
-//   border-top: 3px solid #cc5500;
-//   top: 2rem;
-//   width: 200%;
-// }
+.description {
+  font-size: 2rem;
+  margin: 0 auto 4rem 2rem;
+  text-align: left;
+}
 
 section {
   margin: 2%;
   border-radius: 12px;
-  height: 70vh;
-  padding: 2rem;
+  height: 100%;
+  padding: 1rem 2rem;
 }
 
 h2 {
   font-size: 3.5rem;
   text-transform: uppercase;
-  text-align: center;
-  margin: 1rem 0;
 }
 
 h2 span {
@@ -91,7 +91,7 @@ h2 span:after {
   //   border-bottom: 3px solid #cc5500;
   border-top: 3px solid #cc5500;
   top: 2rem;
-  width: 200%;
+  width: 180%;
 }
 
 h2 span::before {
@@ -106,27 +106,64 @@ ul {
   flex-wrap: wrap;
   height: 80%;
   li {
-    cursor: pointer;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 1rem;
     width: calc(50% - 2rem);
-    text-align: center;
+    height: 20rem;
     button {
       width: 100%;
       height: 100%;
-      border: none;
-      kbd {
-        font-size: 5rem;
-      }
-      p {
-        font-size: 2rem;
-      }
+      cursor: pointer;
     }
   }
+
+  kbd {
+    font-size: 5rem;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+
   button:focus {
     border: 2px dotted whitesmoke;
+  }
+
+  select {
+    padding: 0.8rem 1.2rem;
+    color: #cc5500;
+    background-color: #222;
+    font-size: 2rem;
+    border: 1px solid #cc5500;
+    max-width: 100%;
+    width: 80%;
+    padding-left: .1rem;
+    // overflow: hidden;
+    // appearance: none;
+    // -webkit-appearance: none;
+    // -moz-appearance: none;
+    // -o-appearance: none;
+  }
+
+//   select + i{
+//     float: right;
+//     pointer-events: none;
+//     color: #cc5500;
+//     font-size: 2rem;
+//     border: 1px solid #cc5500;
+//     height: 100%;
+//     padding: .8rem .6rem .2rem .6rem;
+// }
+
+select:after{
+  background-color: #222;
+}
+
+
+  select:focus-within {
+    border: 1px dotted #cc5500;
   }
 }
 
@@ -134,12 +171,13 @@ ul {
   transition: all 0.1s;
   transform: scale(1.1);
 }
-// .visuallyhidden:not(:focus):not(:active) {
-//   position: absolute !important;
-//   height: 1px;
-//   width: 1px;
-//   overflow: hidden;
-//   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-//   clip: rect(1px, 1px, 1px, 1px);
-//   white-space: nowrap; /* added line */
-// }
+
+.visuallyHidden:not(:focus):not(:active) {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
+}

@@ -7,7 +7,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&family=Jacques+Francois+Shadow&family=Literata:wght@600;700&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/png" href="">
+    <script src="https://kit.fontawesome.com/80d230e595.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./styles/styles.css">
     <title>Li'l Drum</title>
@@ -28,6 +28,7 @@
                 </span>
                 <span class="lines"></span>
             </h1>
+            <h2 class="description">A finger drum machine</h2>
         </div>
     </header>
 
@@ -36,31 +37,74 @@
             <section>
                 <h2><span>Kit</span></h2>
                 <ul>
-                    <li class="sound kick" id="0">
-                        <button>
-                            <kbd class="visuallyhidden">A</kbd>
-                            <p>Bass</p>
+                    <li>
+                        <button class="sound kick" id="0">
+                            <kbd class="visuallyHidden">A</kbd>
+                            <p>Kick</p>
                         </button>
+                        <form action="">
+                            <label for="kick" class="visuallyHidden"></label>
+                            <select name="kick" id="kick">
+                                <option value="kick" id="k0" default>Kick</option>
+                                <option value="kick2" id="k1">Kick 2</option>
+                                <option value="kick3" id="k2">Kick 3</option>
+                                <option value="kick4" id="k3">Kick 4</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </form>
                     </li>
-                    <li class="sound snare" id="1">
-                        <button>
-                            <kbd class="visuallyhidden">S</kbd>
+
+                    <li>
+                        <button class="sound snare" id="1">
+                            <kbd class="visuallyHidden">S</kbd>
                             <p>Snare</p>
                         </button>
+                        <form action="">
+                            <label for="snare" class="visuallyHidden">Snare</label>
+                            <select name="snare" id="snare">
+                                <option value="snare" id="s0" default>Snare</option>
+                                <option value="snare2" id="s1">Snare 2</option>
+                                <option value="snare3" id="s2">Snare 3</option>
+                                <option value="snare4" id="s3">Snare 4</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </form>
                     </li>
-                    <li class="sound closed" id="2">
-                        <button>
-                            <kbd class="visuallyhidden">D</kbd>
+
+                    <li>
+                        <button class="sound closed" id="2">
+                            <kbd class="visuallyHidden">D</kbd>
                             <p>Closed</p>
                         </button>
+                        <form action="">
+                            <label for="closedHat" class="visuallyHidden"></label>
+                            <select name="closedHat" id="closedHat">
+                                <option value="closedHat" id="c0" default>Cl. Hat</option>
+                                <option value="closedHat2" id="c1">Cl. Hat 2</option>
+                                <option value="closedHat3" id="c2">Cl. Hat 3</option>
+                                <option value="closedHat4" id="c3">Cl. Hat 4</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </form>
                     </li>
-                    <li class="sound open" id="3">
-                        <button>
-                            <kbd class="visuallyhidden">F</kbd>
+                    <li>
+                        <button class="sound open" id="3">
+                            <kbd class="visuallyHidden">F</kbd>
                             <p>Open</p>
                         </button>
+                        <form action="">
+                            <label for="openHat" class="visuallyHidden">Open Hat</label>
+                            <select name="openHat" id="openHat">
+                                <option value="openHat" id="o0" default>Op. Hat</option>
+                                <option value="openHat2" id="o1">Op. Hat 2</option>
+                                <option value="openHat3" id="o2">Op. Hat 3</option>
+                                <option value="openHat4" id="o3">Op. Hat 4</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </form>
                     </li>
                 </ul>
+
             </section>
         </div>
     </main>

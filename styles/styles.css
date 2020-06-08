@@ -278,14 +278,24 @@ li {
 }
 
 section,
-li {
+ul li button {
   border: 5px solid #cc5500;
 }
 
+h2,
+button {
+  margin: 1rem 0;
+}
+
+ul li,
+h2 {
+  text-align: center;
+}
+
 h1 {
+  margin-left: 1rem;
   letter-spacing: -0.2rem;
   font-family: "Literata", serif;
-  margin-left: 1rem;
 }
 
 h1 .upper {
@@ -310,18 +320,22 @@ h1 .drum {
   letter-spacing: -1rem;
 }
 
+.description {
+  font-size: 2rem;
+  margin: 0 auto 4rem 2rem;
+  text-align: left;
+}
+
 section {
   margin: 2%;
   border-radius: 12px;
-  height: 70vh;
-  padding: 2rem;
+  height: 100%;
+  padding: 1rem 2rem;
 }
 
 h2 {
   font-size: 3.5rem;
   text-transform: uppercase;
-  text-align: center;
-  margin: 1rem 0;
 }
 
 h2 span {
@@ -336,7 +350,7 @@ h2 span:after {
   height: 1rem;
   border-top: 3px solid #cc5500;
   top: 2rem;
-  width: 200%;
+  width: 180%;
 }
 
 h2 span::before {
@@ -354,7 +368,6 @@ ul {
 }
 
 ul li {
-  cursor: pointer;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -367,20 +380,20 @@ ul li {
           justify-content: center;
   margin: 1rem;
   width: calc(50% - 2rem);
-  text-align: center;
+  height: 20rem;
 }
 
 ul li button {
   width: 100%;
   height: 100%;
-  border: none;
+  cursor: pointer;
 }
 
-ul li button kbd {
+ul kbd {
   font-size: 5rem;
 }
 
-ul li button p {
+ul p {
   font-size: 2rem;
 }
 
@@ -388,11 +401,42 @@ ul button:focus {
   border: 2px dotted whitesmoke;
 }
 
+ul select {
+  padding: 0.8rem 1.2rem;
+  color: #cc5500;
+  background-color: #222;
+  font-size: 2rem;
+  border: 1px solid #cc5500;
+  max-width: 100%;
+  width: 80%;
+  padding-left: .1rem;
+}
+
+ul select:after {
+  background-color: #222;
+}
+
+ul select:focus-within {
+  border: 1px dotted #cc5500;
+}
+
 .played {
   -webkit-transition: all 0.1s;
   transition: all 0.1s;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.visuallyHidden:not(:focus):not(:active) {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  /* added line */
 }
 
 @media (min-width: 769px) {
