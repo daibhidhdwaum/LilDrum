@@ -6,13 +6,15 @@ button {
 h1,
 p,
 h2,
-kbd {
+kbd,
+h3 {
   color: #cc5500;
 }
 
 h2,
 p,
-kbd {
+kbd,
+h3 {
   font-family: "Rubik", sans-serif;
   text-transform: uppercase;
 }
@@ -28,14 +30,18 @@ ul li button {
 }
 
 h2,
-button {
+button,
+h3 {
   margin: 1rem 0;
 }
 
 ul li,
-h2 {
+h2,
+h3 {
   text-align: center;
 }
+
+// HEADER
 
 h1 {
   margin-left: 1rem;
@@ -61,10 +67,12 @@ h1 {
 }
 
 .description {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin: 0 auto 4rem 2rem;
   text-align: left;
 }
+
+// BODY
 
 section {
   margin: 2%;
@@ -73,18 +81,18 @@ section {
   padding: 1rem 2rem;
 }
 
-h2 {
+h3 {
   font-size: 3.5rem;
   text-transform: uppercase;
 }
 
-h2 span {
+h3 span {
   display: inline-block;
   position: relative;
 }
 
-h2 span:before,
-h2 span:after {
+h3 span:before,
+h3 span:after {
   content: "";
   position: absolute;
   height: 1rem;
@@ -94,13 +102,15 @@ h2 span:after {
   width: 180%;
 }
 
-h2 span::before {
+h3 span::before {
   right: 6rem;
 }
 
-h2 span::after {
+h3 span::after {
   left: 6rem;
 }
+
+// PADS
 
 ul {
   flex-wrap: wrap;
@@ -125,41 +135,27 @@ ul {
 
   p {
     font-size: 2rem;
+    margin: 0;
   }
 
   button:focus {
     border: 2px dotted whitesmoke;
   }
 
-  select {
-    padding: 0.8rem 1.2rem;
-    color: #cc5500;
-    background-color: #222;
-    font-size: 2rem;
-    border: 1px solid #cc5500;
-    max-width: 100%;
-    width: 80%;
-    padding-left: .1rem;
-    // overflow: hidden;
-    // appearance: none;
-    // -webkit-appearance: none;
-    // -moz-appearance: none;
-    // -o-appearance: none;
+  select{
+      -moz-appearance: none;
+			-webkit-appearance: none;
+			appearance: none;
+			border: 4px solid #cc5500;
+			background-image: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png);
+			background-repeat: no-repeat;
+			background-position: 95% center;
+      width: 150px;
+      padding: 5px;
+      font-size: 2rem;
+      background-color: wheat;
+      color: #222;
   }
-
-//   select + i{
-//     float: right;
-//     pointer-events: none;
-//     color: #cc5500;
-//     font-size: 2rem;
-//     border: 1px solid #cc5500;
-//     height: 100%;
-//     padding: .8rem .6rem .2rem .6rem;
-// }
-
-select:after{
-  background-color: #222;
-}
 
 
   select:focus-within {
@@ -167,9 +163,22 @@ select:after{
   }
 }
 
+@keyframes impact {
+  0%{
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100%{
+    transform: scale(1);
+  }
+}
+
 .played {
-  transition: all 0.1s;
-  transform: scale(1.1);
+  animation: impact .4s linear;
 }
 
 .visuallyHidden:not(:focus):not(:active) {

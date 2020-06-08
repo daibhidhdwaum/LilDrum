@@ -259,13 +259,15 @@ button {
 h1,
 p,
 h2,
-kbd {
+kbd,
+h3 {
   color: #cc5500;
 }
 
 h2,
 p,
-kbd {
+kbd,
+h3 {
   font-family: "Rubik", sans-serif;
   text-transform: uppercase;
 }
@@ -283,12 +285,14 @@ ul li button {
 }
 
 h2,
-button {
+button,
+h3 {
   margin: 1rem 0;
 }
 
 ul li,
-h2 {
+h2,
+h3 {
   text-align: center;
 }
 
@@ -321,7 +325,7 @@ h1 .drum {
 }
 
 .description {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin: 0 auto 4rem 2rem;
   text-align: left;
 }
@@ -333,18 +337,18 @@ section {
   padding: 1rem 2rem;
 }
 
-h2 {
+h3 {
   font-size: 3.5rem;
   text-transform: uppercase;
 }
 
-h2 span {
+h3 span {
   display: inline-block;
   position: relative;
 }
 
-h2 span:before,
-h2 span:after {
+h3 span:before,
+h3 span:after {
   content: "";
   position: absolute;
   height: 1rem;
@@ -353,11 +357,11 @@ h2 span:after {
   width: 180%;
 }
 
-h2 span::before {
+h3 span::before {
   right: 6rem;
 }
 
-h2 span::after {
+h3 span::after {
   left: 6rem;
 }
 
@@ -395,6 +399,7 @@ ul kbd {
 
 ul p {
   font-size: 2rem;
+  margin: 0;
 }
 
 ul button:focus {
@@ -402,29 +407,57 @@ ul button:focus {
 }
 
 ul select {
-  padding: 0.8rem 1.2rem;
-  color: #cc5500;
-  background-color: #222;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 4px solid #cc5500;
+  background-image: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png);
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  width: 150px;
+  padding: 5px;
   font-size: 2rem;
-  border: 1px solid #cc5500;
-  max-width: 100%;
-  width: 80%;
-  padding-left: .1rem;
-}
-
-ul select:after {
-  background-color: #222;
+  background-color: wheat;
+  color: #222;
 }
 
 ul select:focus-within {
   border: 1px dotted #cc5500;
 }
 
+@-webkit-keyframes impact {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes impact {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 .played {
-  -webkit-transition: all 0.1s;
-  transition: all 0.1s;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-animation: impact .4s linear;
+          animation: impact .4s linear;
 }
 
 .visuallyHidden:not(:focus):not(:active) {
