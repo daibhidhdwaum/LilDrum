@@ -6,21 +6,21 @@ lilDrum.instruments = [
         pad: "0",
         keyCode: "a",
         soundPath: [
-                    `./assets/audio/kicks/kick.wav`,
-                    `./assets/audio/kicks/kick1.wav`,
-                    `./assets/audio/kicks/kick2.wav`,
-                    `./assets/audio/kicks/kick3.wav`
+            `./assets/audio/kicks/kick.wav`,
+            `./assets/audio/kicks/kick1.wav`,
+            `./assets/audio/kicks/kick2.wav`,
+            `./assets/audio/kicks/kick3.wav`
         ]
     },
     {
         pad: "1",
         keyCode: "s",
         soundPath:  [ 
-                    `./assets/audio/snares/snare.wav`,
-                    `./assets/audio/snares/snare2.wav`,
-                    `./assets/audio/snares/snare3.wav`,
-                    `./assets/audio/snares/snare4.wav`
-        ]
+            `./assets/audio/snares/snare.wav`,
+            `./assets/audio/snares/snare2.wav`,
+            `./assets/audio/snares/snare3.wav`,
+            `./assets/audio/snares/snare4.wav`
+]
     },
     {
         pad: "2",
@@ -44,7 +44,6 @@ lilDrum.instruments = [
     }
 ]
 
-let hit;
 let instrumentSound;
 let selectedInputIndex;
 
@@ -60,29 +59,11 @@ lilDrum.selectDrumSound = () => {
 
     $("select").on("change", function () {
 
-        const selectInput = $(this).attr("id");
-
-        // determine what select was changed and assign index value
-        switch(selectInput){
-            case "kick":
-                selectedInputIndex = 0;
-                break;
-            case "snare":
-                selectedInputIndex = 1;
-                break;
-            case "closedHat":
-                selectedInputIndex = 2;
-                break;
-            case "openHat":
-                selectedInputIndex = 3;
-                break;
-            }
-
-            const instSoundStr = $(this).find(":selected").attr("id");
-            const strArr = [];
-            strArr.push(instSoundStr)
-            const indexNum = strArr[0].split("")[1];
-            instrumentSound = parseInt(indexNum);
+        const instSoundStr = $(this).find(":selected").attr("id");
+        const strArr = [];
+        strArr.push(instSoundStr)
+        const indexNum = strArr[0].split("")[1];
+        instrumentSound = parseInt(indexNum);
     })
 }
                                
@@ -98,9 +79,11 @@ lilDrum.playSound = (hit, selectedSound) =>{
 }
 
 lilDrum.onHitResize = (hit) => {
-        $(`#${hit}`).addClass("played");
-        setTimeout(() => {
-            $(`#${hit}`).removeClass("played");
+
+    $(`#${hit}`).addClass("played");
+
+    setTimeout(() => {
+        $(`#${hit}`).removeClass("played");
     }, 410);
 }
 
@@ -118,9 +101,9 @@ lilDrum.onClickSound = () => {
 
 // keyboard trigger function
 lilDrum.keyTriggerSound = () => {
-    // look at window to 
+    // look at window 
     $(window).keydown((e) => {
-        // determine which key has been hit
+        // to determine which key has been hit
         const key = e.key.toLowerCase();
         for(let i = 0; i < lilDrum.instruments.length; i++){
             if(key === lilDrum.instruments[i].keyCode){

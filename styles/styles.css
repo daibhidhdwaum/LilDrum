@@ -273,7 +273,8 @@ h3 {
 }
 
 ul,
-li {
+li,
+form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -294,6 +295,24 @@ ul li,
 h2,
 h3 {
   text-align: center;
+}
+
+li,
+form {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+select,
+p,
+.description {
+  font-size: 2rem;
+}
+
+section,
+button {
+  height: 100%;
 }
 
 h1 {
@@ -325,7 +344,6 @@ h1 .drum {
 }
 
 .description {
-  font-size: 2.5rem;
   margin: 0 auto 4rem 2rem;
   text-align: left;
 }
@@ -333,13 +351,11 @@ h1 .drum {
 section {
   margin: 2%;
   border-radius: 12px;
-  height: 100%;
   padding: 1rem 2rem;
 }
 
 h3 {
   font-size: 3.5rem;
-  text-transform: uppercase;
 }
 
 h3 span {
@@ -368,7 +384,6 @@ h3 span::after {
 ul {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  height: 80%;
 }
 
 ul li {
@@ -379,9 +394,6 @@ ul li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   margin: 1rem;
   width: calc(50% - 2rem);
   height: 20rem;
@@ -389,7 +401,6 @@ ul li {
 
 ul li button {
   width: 100%;
-  height: 100%;
   cursor: pointer;
 }
 
@@ -398,30 +409,32 @@ ul kbd {
 }
 
 ul p {
-  font-size: 2rem;
   margin: 0;
 }
 
 ul button:focus {
-  border: 2px dotted whitesmoke;
+  border: 1px dotted whitesmoke;
 }
 
-ul select {
+form {
+  margin-top: 2rem;
+}
+
+select {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  border: 4px solid #cc5500;
+  border: .4rem solid #cc5500;
   background-image: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png);
   background-repeat: no-repeat;
   background-position: 95% center;
-  width: 150px;
+  width: 15rem;
   padding: 5px;
-  font-size: 2rem;
   background-color: wheat;
   color: #222;
 }
 
-ul select:focus-within {
+select:focus-within {
   border: 1px dotted #cc5500;
 }
 
@@ -456,8 +469,8 @@ ul select:focus-within {
 }
 
 .played {
-  -webkit-animation: impact .4s linear;
-          animation: impact .4s linear;
+  -webkit-animation: impact 0.4s linear;
+          animation: impact 0.4s linear;
 }
 
 .visuallyHidden:not(:focus):not(:active) {
