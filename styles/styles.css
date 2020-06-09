@@ -260,14 +260,16 @@ h1,
 p,
 h2,
 kbd,
-h3 {
+h3,
+label {
   color: #cc5500;
 }
 
 h2,
 p,
 kbd,
-h3 {
+h3,
+label {
   font-family: "Rubik", sans-serif;
   text-transform: uppercase;
 }
@@ -306,6 +308,7 @@ form {
 
 select,
 p,
+label,
 .description {
   font-size: 2rem;
 }
@@ -313,6 +316,17 @@ p,
 section,
 button {
   height: 100%;
+}
+
+li,
+form {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 h1 {
@@ -387,13 +401,6 @@ ul {
 }
 
 ul li {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin: 1rem;
   width: calc(50% - 2rem);
   height: 20rem;
@@ -417,7 +424,11 @@ ul button:focus {
 }
 
 form {
-  margin-top: 2rem;
+  margin: 2rem 1rem;
+}
+
+label {
+  margin-bottom: 1rem;
 }
 
 select {
@@ -473,18 +484,6 @@ select:focus-within {
           animation: impact 0.4s linear;
 }
 
-.visuallyHidden:not(:focus):not(:active) {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px);
-  /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
-  /* added line */
-}
-
 @media (min-width: 769px) {
   h1 .upper {
     font-size: calc(10rem * 2);
@@ -500,7 +499,7 @@ select:focus-within {
     font-size: calc(6rem * 2);
   }
   section {
-    height: 50vh;
+    height: 55vh;
   }
   ul {
     -webkit-box-align: center;

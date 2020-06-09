@@ -45,7 +45,6 @@ lilDrum.instruments = [
 ]
 
 let instrumentSound;
-let selectedInputIndex;
 
 // function to set default sound
 lilDrum.defaultSound = () => {
