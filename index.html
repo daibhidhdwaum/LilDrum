@@ -8,7 +8,7 @@
         href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&family=Jacques+Francois+Shadow&family=Literata:wght@600;700&display=swap"
         rel="stylesheet">
     <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/sass/styles.css">
     <title>Li'l Drum</title>
 </head>
 
@@ -60,14 +60,38 @@
                             <p>Open</p>
                         </button>
                     </li>
+                    <li>
+                        <button class="sound lowTom" id="4">
+                            <kbd>G</kbd>
+                            <p>Low Tom</p>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="sound midTom" id="5">
+                            <kbd>H</kbd>
+                            <p>Mid Tom</p>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="sound hiTom" id="6">
+                            <kbd>J</kbd>
+                            <p>High Tom</p>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="sound cymbal" id="7">
+                            <kbd>K</kbd>
+                            <p>Cymbal</p>
+                        </button>
+                    </li>
                 </ul>
                 <form action="">
                     <label for="SelectKit">Select Kit</label>
                     <select name="selectKit" id="selectKit">
-                        <option value="ick" id="k0" default>Default Kit</option>
-                        <option value="kick2" id="k1">Kit 2</option>
-                        <option value="kick3" id="k2">Kit 3</option>
-                        <option value="kick4" id="k3">Kit 4</option>
+                        <option value="kit" id="k0" default>Default Kit</option>
+                        <option value="kit2" id="k1">Kit 2</option>
+                        <option value="kit3" id="k2">Kit 3</option>
+                        <option value="kit4" id="k3a">Kit 4</option>
                     </select>
                 </form>
             </section>

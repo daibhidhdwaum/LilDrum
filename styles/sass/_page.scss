@@ -1,6 +1,7 @@
 body,
 button {
-  background-color: #222;
+  // background-color: #222;
+  background-color: #0d0d0d;
 }
 
 h1,
@@ -21,7 +22,6 @@ label {
   text-transform: uppercase;
 }
 
-ul,
 li,
 form {
   display: flex;
@@ -34,7 +34,7 @@ ul li button {
 
 h2,
 button,
-h3{
+h3 {
   margin: 1rem 0;
 }
 
@@ -45,24 +45,24 @@ h3 {
 }
 
 li,
-form{
+form {
   justify-content: center;
 }
 
 select,
 p,
 label,
-.description{
+.description {
   font-size: 2rem;
 }
 
 section,
-button{
+button {
   height: 100%;
 }
 
 li,
-form{
+form {
   flex-direction: column;
   align-items: center;
 }
@@ -135,11 +135,11 @@ h3 span::after {
 // PADS
 
 ul {
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
   li {
-    margin: 1rem;
-    width: calc(50% - 2rem);
-    height: 20rem;
+    height: 11rem;
     button {
       width: 100%;
       cursor: pointer;
@@ -152,18 +152,19 @@ ul {
 
   p {
     margin: 0;
+    font-size: 1.6rem;
   }
 
   button:focus {
-    border: 1px dotted whitesmoke;
+    border: 5px dashed #cc5500;
   }
 }
 
-form{
+form {
   margin: 2rem 1rem;
 }
 
-label{
+label {
   margin-bottom: 1rem;
 }
 
@@ -171,7 +172,7 @@ select {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  border: .4rem solid #cc5500;
+  border: 0.4rem solid #cc5500;
   background-image: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png);
   background-repeat: no-repeat;
   background-position: 95% center;
@@ -182,11 +183,11 @@ select {
 }
 
 select:focus-within {
-  border: 1px dotted #cc5500;
+  border: 0.4rem dashed #cc5500;
 }
 
 @keyframes impact {
-  0%{
+  0% {
     transform: scale(1);
   }
   50% {
