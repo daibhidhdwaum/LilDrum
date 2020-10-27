@@ -1,4 +1,10 @@
-# david-downie-project-three
+# Li'l Drum
+
+This project was originally build at Juno College of Technology in Toronto. Li'l Drum is a finger drum machine inspired by both classic hardware drum machines like Linn Drum and Roland 808 and their sofware equivalent found on many modern digital audio workstations. It has a simple interface that allows the user to interact via the corresponding keyboard keys or touch screen on mobile devices. There are currently 4 kits available. Have fun, Li'l Drummers!
+
+https://daibhidhdwaum.github.io/LilDrum/
+
+
 
 Shout outs
 
